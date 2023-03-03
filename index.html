@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<body>
+<figure class="swing">
+  <img src="https://www.heraldry-wiki.com/heraldrywiki/images/thumb/6/62/Viana_%28Maranh%C3%A3o%29.jpg/300px-Viana_%28Maranh%C3%A3o%29.jpg" width="230" >
+</figure>  
+<section class="header">
+<ul id="main"></ul> 
+  <divc class="title-wrapper">
+
+    </div>
+
+<fieldset id="campo" >
+    <legend>Escoha os números fixos:</legend>
+        <div>
+      <input type="checkbox" id="1" name="1">
+      <label for="1">1</label>
+      <input type="checkbox" id="2" name="2">
+      <label for="2">2</label>
+	<input type="checkbox" id="3" name="3">
+      <label for="3">3</label>
+      <input type="checkbox" id="4" name="4">
+      <label for="4">4</label> 
+      <input type="checkbox" id="5" name="5">
+      <label for="5">5</label>
+      <input type="checkbox" id="6" name="6">
+      <label for="6">6</label>
+	<input type="checkbox" id="7" name="7">
+      <label for="7">7</label>
+      <input type="checkbox" id="8" name="8">
+      <label for="8">8</label> 
+      <input type="checkbox" id="9" name="9">
+      <label for="9">9</label>
+      <input type="checkbox" id="10" name="10">
+      <label for="10">10</label>
+	<input type="checkbox" id="11" name="11">
+      <label for="11">11</label>
+      <input type="checkbox" id="12" name="12">
+      <label for="12">12</label> 
+      <input type="checkbox" id="13" name="13">
+      <label for="13">13</label>
+      <input type="checkbox" id="14" name="14">
+      <label for="14">14</label>
+      <input type="checkbox" id="15" name="15">
+      <label for="15">15</label>
+      <input type="checkbox" id="16" name="16">
+      <label for="16">16</label>
+      <input type="checkbox" id="17" name="17">
+      <label for="17">17</label>
+      <input type="checkbox" id="18" name="18">
+      <label for="18">18</label>
+      <input type="checkbox" id="19" name="19">
+      <label for="19">19</label>
+      <input type="checkbox" id="20" name="20">
+      <label for="20">20</label>
+      <input type="checkbox" id="21" name="21">
+      <label for="21">21</label>
+      <input type="checkbox" id="22" name="22">
+      <label for="22">22</label>
+      <input type="checkbox" id="23" name="23">
+      <label for="23">23</label>
+ 	<input type="checkbox" id="24" name="24">
+      <label for="24">24</label>
+      <input type="checkbox" id="25" name="25">
+      <label for="25">25</label>
+<button onclick="gerar()">GERAR APOSTAS </button>
+    </fieldset> 
+    <h1 class="sweet-title">
+      <span data-text="Sweet" id="heads1">GERADOR DE APOSTAS DO JOVEM</span>
+      
+
+    </h1>
+    <span class="top-title">Gere sua aposta!</span>
+
+
+	
+
+
+</div> 
+
+
+</section>
+
+<section class="disclaimer">
+  
+</section>
+
+
+</body>
+</html>
+<script>
+count=1;
+var ja_foi=[]
+
+</script>
+
+
+<script>
+function gerar(){
+
+
+
+var checado=[]
+var n_checado=[]
+
+var checa=["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"]
+for (let i of checa) {
+     let box=document.getElementById(i).checked
+     if (box==true){checado.push(i)}
+     else{n_checado.push(i)}}
+for(var i = 0; checado.length<8;i++){
+	let randomIndex = Math.floor(Math.random() * n_checado.length);
+	if(n_checado[randomIndex]!=undefined){
+	checado.push(n_checado[randomIndex])
+	delete n_checado[randomIndex]}}
+var div = document.createElement("li");
+div.class="checklist"
+div.innerHTML = `Aposta número ${count}: `
+document.getElementById("main").appendChild(div);
+var div2 = document.createElement("li");
+div2.innerHTML =checado;
+div2.class="checklist"
+div2.style.color = 'red';
+document.getElementById("main").appendChild(div2);
+ja_foi.push(checado.join(""))
+console.log(ja_foi)
+count++	
+
+	
+
+}
+</script>
+
+<style>
+body {
+background: rgb(228 228 231);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
+
+body {
+  font-family: "Exo 2", sans-serif;
+  background: rgb(63, 161, 251);
+  background: linear-gradient(
+    142deg,
+    rgba(63, 161, 251, 1) 0%,
+    rgba(252, 70, 168, 1) 100%
+  );
+
+}
+span:hover{
+      transition: 1500ms linear; 
+	transform: translateX(400px);
+    }
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 4rem);
+}
+
+
+.title-wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  transform: skew(0, -10deg);
+}
+
+.top-title {
+  order: 1;
+  text-align: center;
+  display: block;
+  color: #fff;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+.bottom-title {
+  order: 3;
+  text-align: center;
+  display: block;
+  color: #fff;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  margin-top: 2rem;
+  padding-left: 2rem;
+}
+
+.sweet-title {
+  order: 2;
+  color: #fde9ff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 0.75em;
+  text-align: center;
+  text-shadow: 3px 1px 1px #4af7ff, 2px 2px 1px #165bfb, 4px 2px 1px #4af7ff,
+    3px 3px 1px #165bfb, 5px 3px 1px #4af7ff, 4px 4px 1px #165bfb,
+    6px 4px 1px #4af7ff, 5px 5px 1px #165bfb, 7px 5px 1px #4af7ff,
+    6px 6px 1px #165bfb, 8px 6px 1px #4af7ff, 7px 7px 1px #165bfb,
+    9px 7px 1px #4af7ff;
+
+  span {
+    display: block;
+    position: relative;
+
+    &:before {
+      content: attr(data-text);
+      position: absolute;
+      text-shadow: 2px 2px 1px #e94aa1, -1px -1px 1px #c736f9,
+        -2px 2px 1px #e94aa1, 1px -1px 1px #f736f9;
+      z-index: 1;
+    }
+
+    &:nth-child(1) {
+      padding-right: 2.25rem;
+    }
+
+    &:nth-child(2) {
+      padding-left: 2.25rem;
+    }
+  }
+}
+
+.disclaimer {
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+}
+.check-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.check-list li {
+  position: relative;
+  list-style-type: none;
+  padding-left: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.check-list li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 5px;
+    height: 11px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: #00a8a8;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+}
+#heads1 { width: 100px;
+  height: 10px;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.swing {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    float:left;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.swing img {
+    border: 5px solid #f8f8f8;
+    display: block;
+}
+.swing:after{
+    content: '';
+    position: absolute;  
+    width: 20px; height: 20px;  
+    border: 1px solid #999;
+    top: -10px; left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+/* nail */
+.swing:before{
+    content: '';
+    position: absolute;
+    width: 5px; height: 5px;
+    top: -14px;left: 54%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+ 
+@keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+
+
+</style>
